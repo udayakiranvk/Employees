@@ -60,10 +60,10 @@ public class EmployeeRestController {
     }
 
     @DeleteMapping("/employees/{employeeId}")
-    public List<Employee> deleteEmployee(@PathVariable int employeeId)
+    public String deleteEmployee(@PathVariable int employeeId)
     {
         employeeService.deleteById(employeeId);
 
-        return employeeService.findAll();
+        return "Employee Deleted for Emp id"+employeeId;
     }
 }
